@@ -6,13 +6,23 @@ senha_bd_aluno = str("Luan123")
 user_bd_professor = str("Habner")
 senha_bd_professor = str("Habner123")
 
-if tipouser == 1:
+user_professor = ()
+senha_professor = ()
+
+
+if tipouser == "1":
     user_professor = str(input("Digite seu usuário: "))
     senha_professor = str(input("Digite sua senha: "))
+elif user_professor == user_bd_professor:
+    print("sim")
 else:
+    print("Não")
+
+
+#else:
     
-    user_aluno = str(input("Digite seu usuário: "))
-    senha_aluno = str(input("Digite sua senha: "))
+# user_aluno = str(input("Digite seu usuário: "))
+# senha_aluno = str(input("Digite sua senha: "))
     
 
 

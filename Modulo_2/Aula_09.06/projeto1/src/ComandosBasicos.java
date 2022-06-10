@@ -14,5 +14,6 @@ public class ComandosBasicos {
     soma = num1 + num2;
 
     System.out.println("A soma: " + soma);
+    ler.close();
   }
 }

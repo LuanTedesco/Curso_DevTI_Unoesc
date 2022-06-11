@@ -1,6 +1,3 @@
 {
-  "java.project.sourcePaths": [
-    "Modulo_2/Aula_09.06/exemplos/src",
-    "Modulo_2/Aula_09.06/projeto1/src"
-  ]
+  "java.project.sourcePaths": ["Modulo_2/Aula_09.06/projeto1/src", ""]
 }

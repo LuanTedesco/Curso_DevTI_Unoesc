@@ -1,3 +1,5 @@
+package Modulo_2.ExemplosExplicacoes.src.exemplo;
+
 import java.util.Scanner;
 
 public class ComandosBasicos {

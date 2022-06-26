@@ -33,14 +33,3 @@ public class Principal2 {
     scan.close();
   }
 }
-    media = aluno1.calcularMedia(n1, n2, n3);
-
-    System.out.println("A media do aluno é: " + media);
-
-    aprovacao = aluno1.verificarAprovacao();
-
-    System.out.println("O Aluno está: " + aprovacao);
-
-    scan.close();
-  }
-}

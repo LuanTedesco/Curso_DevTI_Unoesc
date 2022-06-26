@@ -32,13 +32,3 @@ public class Veiculo {
     return this.cor;
   }
 }
-  }
-
-  void mudarCor(String cor) {
-    this.cor = cor;
-  }
-
-  String exibirCor() {
-    return this.cor;
-  }
-}

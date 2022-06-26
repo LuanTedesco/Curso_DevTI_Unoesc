@@ -24,5 +24,3 @@ public class Produto {
     System.out.println("Preco com o reajuste: " + preco);
   }
 }
-  }
-}

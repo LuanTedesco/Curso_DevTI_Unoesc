@@ -42,23 +42,3 @@ public class Conta {
     System.out.println("Saldo: " + saldo);
   }
 }
-
-  double deposita(double valor) {
-    return this.saldo = this.saldo + valor;
-  }
-
-  double saca(double valor) {
-    if (this.saldo > valor) {
-      return this.saldo = this.saldo - valor;
-    } else {
-      return this.saldo = (this.saldo + 1) - 1;
-    }
-  }
-
-  void verificarSaldo() {
-    System.out.println("Numero da conta: " + numeroConta);
-    System.out.println("Tipo da conta: " + tipoConta);
-    System.out.println("Titular da conta: " + titularConta);
-    System.out.println("Saldo: " + saldo);
-  }
-}

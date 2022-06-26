@@ -31,12 +31,3 @@ public class Aluno {
     }
   }
 }
-    } else if (media < 7 && media >= 5) {
-      return "Em exame";
-    } else if (media < 5 && media >= 0) {
-      return "Reprovado";
-    } else {
-      return "Nota inválida";
-    }
-  }
-}

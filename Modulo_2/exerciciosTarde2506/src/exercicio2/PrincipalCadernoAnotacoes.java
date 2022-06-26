@@ -36,17 +36,3 @@ public class PrincipalCadernoAnotacoes {
     scan.close();
   }
 }
-        caderno.adicionarAnotacao(anotacao);
-      } else if (opcao == 2) {
-        caderno.visualizarAnotacoes();
-      } else if (opcao == 3) {
-        caderno.apagarAnotacoes();
-      } else if (opcao == 4) {
-        System.out.println("Finalizando aplicação");
-      } else {
-        System.out.println("Opção inválida");
-      }
-    } while (opcao != 4);
-    scan.close();
-  }
-}

@@ -44,25 +44,3 @@ public class Principal1 {
     scan.close();
   }
 }
-      n1 +
-      " - " +
-      n2 +
-      " é: " +
-      c1.subtrair(n1, n2)
-    );
-
-    System.out.println(
-      "A multiplicação dos numeros " +
-      n1 +
-      " * " +
-      n2 +
-      " é: " +
-      c1.multiplicar(n1, n2)
-    );
-
-    System.out.println(
-      "A divisão dos numeros " + n1 + " / " + n2 + " é: " + c1.dividir(n1, n2)
-    );
-    scan.close();
-  }
-}

@@ -1,4 +1,4 @@
-package Modulo_2.ExemplosExplicacoes.src.exemplo;
+package Modulo_2.exemplosExplicacoes.src.exemplo;
 
 import java.util.Scanner;
 

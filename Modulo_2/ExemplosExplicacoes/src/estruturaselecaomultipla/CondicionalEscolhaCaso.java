@@ -1,4 +1,4 @@
-package Modulo_2.ExemplosExplicacoes.src.estruturaselecaomultipla;
+package Modulo_2.exemplosExplicacoes.src.estruturaselecaomultipla;
 
 import java.util.Scanner;
 

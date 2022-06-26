@@ -1,4 +1,4 @@
-package Modulo_2.ExemplosExplicacoes.src.estruturascondicionais;
+package Modulo_2.exemplosExplicacoes.src.estruturascondicionais;
 
 import java.util.Scanner;
 

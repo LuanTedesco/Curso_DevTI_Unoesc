@@ -1,4 +1,4 @@
-package Modulo_2.ExemplosExplicacoes.src.estruturashomogeneas;
+package Modulo_2.exemplosExplicacoes.src.estruturashomogeneas;
 
 import java.util.Scanner;
 

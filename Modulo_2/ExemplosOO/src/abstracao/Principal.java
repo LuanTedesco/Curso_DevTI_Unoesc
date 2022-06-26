@@ -1,24 +1,23 @@
-package Modulo_2.ExemplosOO.src.abstracao;
-
-import java.util.Scanner;
+package Modulo_2.exemplosOO.src.abstracao;
 
 public class Principal {
 
   public static void main(String[] args) {
-    Joystick js = new Joystick();
-    Scanner ler = new Scanner(System.in);
+    // inst�ncia da classe Joystick
+    //objeto			constru��o
+    Joystick js1 = new Joystick("PS4", "Preto", 50);
+    Joystick js2 = new Joystick();
+    Joystick js3 = new Joystick("XBOX");
 
-    System.out.println("Digite o modelo do Joystick");
-    js.modelo = ler.nextLine();
-    System.out.println("Digite a cor do Joystick");
-    js.cor = ler.nextLine();
-    System.out.println("Digite a porcentagem da bateria");
-    js.porcentagemBateria = ler.nextInt();
+    js2.modelo = "PS5";
+    js2.cor = "Branco";
+    js2.porcentagemBateria = 100;
 
-    js.visualizarInfJoystick();
-    js.conectar();
-    js.recarregar();
+    js3.cor = "Preto";
+    js3.porcentagemBateria = 10;
 
-    ler.close();
+    js1.visualizarInfoJoystick();
+    js2.visualizarInfoJoystick();
+    js3.visualizarInfoJoystick();
   }
 }

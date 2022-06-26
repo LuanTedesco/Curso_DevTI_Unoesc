@@ -1,4 +1,4 @@
-package Modulo_2.ExemplosExplicacoes.src.estruturasrepeticao;
+package Modulo_2.exemplosExplicacoes.src.estruturasrepeticao;
 
 public class RepeticaoRepita {
 

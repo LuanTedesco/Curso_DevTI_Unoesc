@@ -1,4 +1,4 @@
-package Modulo_2.exemplosOO.src.atividade1;
+package atividade1;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Modulo_2.exemplosOO.src.abstracao;
+package abstracao;
 
 public class Principal {
 

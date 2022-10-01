@@ -1,0 +1,19 @@
+p {
+  color: brown;
+}
+
+h1 {
+  color: green;
+}
+
+.classe-um {
+  background-color: #4dff4d;
+}
+
+#corAmarelo {
+  color: yellow;
+  text-align: center;
+  /* text-decoration:line-through; isso é umc comentario*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}

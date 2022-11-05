@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temporização</title>
+  <script>
+    let valor = 0,
+      cronometro;
+
+    function testarSetTimeout() {
+      setTimeout(function () {
+        document.getElementById('timeOut').innerHTML = '*** BUMMM !!! ***';
+      }, 500);
+    }
+
+    function iniciarCronometro() {
+      cronometro = setInterval(
+        function () {
+          valor++;
+          document.getElementById('intervalo').innerHTML = valor;
+        }, 1000
+      );
+    }
+
+    function pausarCronometro() {
+      clearInterval(cronometro);
+    }
+
+    function reiniciarCronometro() {
+      valor = 0;
+      document.getElementById('intervalo').innerHTML = valor;
+      clearInterval(cronometro);
+    }
+  </script>
+</head>
+
+<body style="text-align: center">
+  <button onclick="testarSetTimeout()">
+    Teste setTimeout()
+  </button>
+
+  <p>
+    <div id="timeOut"></div>
+  </p>
+
+  <hr>
+
+  <button onclick="iniciarCronometro()">Iniciar setInterval()</button>
+  <button onclick="pausarCronometro()">Pausar setInterval()</button>
+  <button onclick="reiniciarCronometro()">Parar/Reiniciar setInterval()</button>
+
+  <p>
+    <div id="intervalo"></div>
+  </p>
+</body>
+
+</html>

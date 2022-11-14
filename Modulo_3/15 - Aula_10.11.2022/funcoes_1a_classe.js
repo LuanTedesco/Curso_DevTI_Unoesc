@@ -1,14 +1,16 @@
 function somar(x, y) {
-  return x + y
+    return x + y;
 }
 
-const somador = somar
+const somador = somar;
 
-console.log(somar(2, 3))
-console.log(somador(3, 2))
-
-const subtrator = function (x, y) {
-  return x - y
+subtrator = function subtrair(x, y) {
+    return x - y;
 }
 
-console.log(subtrator(20, 5))
+console.log(somar(40, 2));
+console.log(somador(40, 2));
+console.log('')
+// console.log(subtrair(20, 5));
+console.log(subtrator(20, 5));
+

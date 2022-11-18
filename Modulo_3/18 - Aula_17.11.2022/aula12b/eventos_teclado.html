@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Teclado</title>
+
+    <style>
+        .app {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div>
+            Evento <code>onkeydown</code><br>
+            <input onkeydown="acao1(event)" type="text">
+        </div>
+
+        <div>
+            Evento <code>onkeypress</code><br>
+            <input type="text" id="okpress">
+        </div>
+
+        <div>
+            Evento <code>onkeyup</code><br>
+            <input type="text" id="okup">
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('#okpress').addEventListener('keypress', function acao2(e) {
+            console.log('Evento disparado: onkeypress - ' + e.key);
+        });
+
+        document.querySelector('#okup').addEventListener('keyup', acao3);
+
+        function acao1(e) {
+            console.log('Evento disparado: onkeydown - ' + e.key);
+        }
+
+        function acao3(e) {
+            console.log('Evento disparado: onkeyup - ' + e.key);
+        }
+    </script>
+</body>
+
+</html>

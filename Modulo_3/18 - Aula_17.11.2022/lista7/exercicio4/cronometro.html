@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous">
+
+    <title>Contagem Regressiva</title>
+
+    <script>
+        let valor, cronometro;
+
+        function iniciarCronometro() {
+            valor = Number(document.getElementById('valor').value);
+            document.getElementById('cronometro').innerHTML = valor
+
+            cronometro = setInterval(function () {
+                document.getElementById('cronometro').innerHTML = valor;
+
+                if (valor == 0) {
+                    clearInterval(cronometro);
+
+                    document.getElementById('cronometro').innerHTML = '';
+
+                    let imagem = document.createElement('img');
+                    imagem.src = 'https://www.unoesc.edu.br/images/front_end/logo_unoesc.jpg';
+                    imagem.style.width = '15%';
+                    document.body.appendChild(imagem);
+
+                    let arquivo = 'http://www.kasandbox.org/programming-sounds/rpg/giant-no.mp3';
+                    let audio = document.createElement('audio');
+
+                    audio.src = arquivo;
+                    audio.autoplay = 'true';
+                    audio.onended = function () {
+                        this.remove();
+
+                        setTimeout(function () {
+                            document.body.removeChild(imagem);
+                        }, 2000);
+                    };
+
+                    document.body.appendChild(audio);
+                }
+
+                valor--;
+            }, 1000);
+        }
+    </script>
+</head>
+
+<body class="text-center">
+    <div class="container mt-3">
+        <p>
+            Valor:
+            <input type="number" name="" id="valor" value="3">
+        </p>
+    
+        <button class="btn btn-primary" onclick="iniciarCronometro()">
+            <i class="fa-solid fa-hourglass"></i>
+            Iniciar Cronômetro
+        </button>
+    
+        <p>
+            <div id="cronometro"></div>
+        </p>
+    </div>
+</body>
+
+</html>

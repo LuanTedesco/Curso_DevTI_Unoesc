@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulários</title>
+</head>
+
+<body>
+  <form method="get">
+    <input type="search" />
+    <button>Buscar</button>
+    <hr /> Nome: <input type="text" name="fNome" " placeholder="Ex.: João da Silva "
+      maxlength="10 " size="30 ">
+      <br />
+
+      Senha:
+      <input
+        type="password "
+        name="fSenha "
+        placeholder="8 dígitos "
+        maxlength="8 "
+        size="30 "
+      />
+      <br />
+
+      Idade:
+      <input
+        type="number "
+        name="fIdade "
+        min="18 "
+        max="130 "
+        placeholder="18~130 "
+      />
+      <br /><br />
+
+      Sexo:<br />
+      <input type="radio " name="fSexo " value="M " />
+      Masculino
+      <input type="radio " name="fSexo " value="F " checked />
+      Feminino
+      <br /><br />
+
+      Data de nascimento:
+      <input type="date " name="fNascimento " />
+      <br /><br />
+
+      Estado:
+      <select name="fEstado " multiple size="4 ">
+        <optgroup label="Região Sul ">
+          <option value="PR ">Paraná</option>
+          <option value="SC ">Santa Catarina</option>
+          <option value="RS ">Rio Grande do Sul</option>
+        </optgroup>
+      </select>
+      <br /><br />
+
+      <input type="checkbox " name="fAcordo " checked value="ativado " /> Li e
+      estou de acordo! <br /><br />
+
+      <input type="submit " value="Submeter " />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+body {
+  background-color: #06283d;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+fieldset {
+  border-color: #8bbccc;
+  border-radius: 3px;
+  border-style: double;
+}
+
+legend {
+  color: #8bbccc;
+}
+
+label {
+  color: #8bbccc;
+}
+
+input {
+  color: #06283d;
+  border-radius: 2px;
+  border-style: none;
+}
+
+button {
+  background-color: #dff6ff;
+  color: #06283d;
+  border-radius: 2px;
+  border-color: #dff6ff;
+  border-style: none;
+}
+
+input::placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  color: #06283d;
+}
+
+optgroup {
+  background-color: #06283d;
+  border-radius: 2px;
+  border-style: none;
+  color: white;
+}

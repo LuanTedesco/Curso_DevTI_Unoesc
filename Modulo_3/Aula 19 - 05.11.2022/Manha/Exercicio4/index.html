@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temporização</title>
+  <script src="index.js"></script>
+</head>
+
+<body style="text-align: center">
+
+  <input type="text" id="valor">
+  <button id="submit">Submit</button>
+
+  <button onclick="testarSetTimeout()">
+    Teste setTimeout()
+  </button>
+
+  <p>
+    <div id="timeOut"></div>
+  </p>
+
+  <hr>
+
+  <button onclick="iniciarCronometro()">Iniciar</button>
+  <button onclick="pausarCronometro()">Pausar</button>
+  <button onclick="reiniciarCronometro()">Parar/Reiniciar</button>
+
+  <p>
+    <div id="intervalo"></div>
+  </p>
+</body>
+
+</html>

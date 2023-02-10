@@ -1,0 +1,50 @@
+# chave primaria
+@ chave estrageira
+
+categoria
+# cod_categoria
+categoria
+
+1 - Fertilizantes
+2 - Defensivos agrícolas
+3 - Ração
+
+Produtos
+#cod_produto
+Produto
+@categoria
+Preço_unitario
+custo
+Quantidade em estoque
+Classifação fiscal
+Obs
+
+1 - inseticida mirato - 2 - 500 - 40 - ncm - null
+ 
+clientes
+#cod_cliente
+nome
+Cpf
+identidade
+Endereco
+CEP
+Telefone
+
+1 - Fran - 123456789 - Rua x - 898988000 - 49 9999999
+
+Pedidos
+#cod_pedido
+@cod_produto
+@cod_cliente
+Quantidade total
+preco total
+
+1 - 1 - 1 - 1 - 5000
+
+Obs: segundo o Jucinei essa tabela de pedidos não ta legal kkk
+
+
+
+
+
+

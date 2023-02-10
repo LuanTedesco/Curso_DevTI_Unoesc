@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamento CSS: relative</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            /* position: relative; */
+            left: 50px;
+            top: 50px;
+            width: 400px;
+            height: 400px;
+            background: blue;
+        }
+        
+        .box1 {
+            /* position: relative; */
+            top: 50px;
+            left: 50px;
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+
+        .box2 {
+            /* position: relative;
+            top: 50px;
+            left: 50px; */
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

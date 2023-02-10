@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fetch</title>
+
+    <style>
+        table, tr, td {
+            margin: auto; 
+            padding: 10px; 
+            border: 1px solid black; 
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="usuarios"></ul>
+    <table id="tabela"></table>
+
+    <script>
+        const lista = document.getElementById('usuarios');
+        const tabela = document.getElementById('tabela');
+
+        fetch('https://randomuser.me/api?results=5')
+            .then(resp => resp.json())
+            // .then(console.log)
+            .then(resposta => {
+                // throw new Error('teste');
+
+                console.log(resposta);
+                usuarios = resposta.results;
+                
+                for (usuario of usuarios) {
+                    montaVisualizacao(false, usuario);
+                }
+            })
+            .catch(erro => console.log('Oops!' + erro))
+            .finally(() => console.log('Terminou!'));
+
+            function montaVisualizacao(status, usuario) {
+                let img = document.createElement('img');
+                img.src = usuario.picture.medium;
+                img.style.borderRadius = '50%';
+                img.style.boxShadow = "2px 3px 4px";
+
+                if (status) {
+                    let item = document.createElement('li');
+                    let sp = document.createElement('span');
+
+                    sp.innerHTML = `: ${usuario.name.title} ${usuario.name.first} ${usuario.name.last}<hr>`;
+
+                    item.appendChild(img);
+                    item.appendChild(sp);
+                    lista.appendChild(item);
+                } else {
+                    let linha = document.createElement('tr');
+
+                    let coluna1 = document.createElement('td');
+                    coluna1.setAttribute('style', 'padding: 10px 20px');
+                    
+                    let coluna2 = document.createElement('td');
+                    coluna2.setAttribute('style', 'padding: 10px 20px');
+                    
+                    let nome = document.createElement('h3');
+
+                    nome.innerHTML = `: ${usuario.name.title} ${usuario.name.first} ${usuario.name.last}`;
+                    coluna1.appendChild(nome);
+                    linha.appendChild(coluna1);
+
+                    coluna2.appendChild(img);
+                    linha.appendChild(coluna2);
+
+                    tabela.appendChild(linha);
+                }
+            }
+    </script>
+</body>
+
+</html>

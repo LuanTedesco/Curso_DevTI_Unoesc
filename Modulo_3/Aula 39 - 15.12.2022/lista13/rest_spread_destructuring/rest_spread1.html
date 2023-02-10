@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador rest/spread como spread</title>
+
+    <script>
+        // Aplicando a strings
+        let titulo = 'Operador rest/spread sendo utilizado como spread';
+        console.log(titulo);
+        console.log(...titulo);   // Espalhando...
+        console.log([...titulo]); // Espalhando...
+
+        // Aplicando a arrays
+        let cursos1 = ['VisuALG e Python', 'Java', 'HTML/CSS/JS'];
+        let cursos2 = ['MySQL', 'PostgreSQL'];
+
+        let todosCursos = ['Introdução', ...cursos1, ...cursos2];
+        console.log(todosCursos);
+
+        // Aplicando a objetos
+        let pessoa = { nome: 'Fulano', endereco: 'Rua Abc' };
+        let pessoaComIdade = { ...pessoa, idade: 30 };
+        console.log(pessoa);
+        console.log(pessoaComIdade);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

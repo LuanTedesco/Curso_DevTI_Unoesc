@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador rest/spread como rest</title>
+
+    <script>
+        // Utilização como rest
+        function somar(metodo, ...valores) { // => equivale a valores = [38, 2, 1, 1]
+            let resultado = 0;
+            console.log(valores);
+
+            if (metodo) {
+                console.log("Procedimento com 'for ... of':");
+
+                for (valor of valores) {
+                    resultado += valor;
+                }
+            } else {
+                // Forma equivalente com forEach()
+                console.log("Procedimento com 'forEach()':");
+
+                resultado = 0;
+                valores.forEach(valor => resultado += valor);
+            }
+
+            return resultado;
+        }
+
+        console.log(somar(true, 38, 2, 1, 1));
+
+        function multiplicar(multiplicador, ...valores) {
+            valores.forEach(valor => console.log(multiplicador * valor));
+        }
+
+        multiplicar(10, 1, 2, 3, 4, 5);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

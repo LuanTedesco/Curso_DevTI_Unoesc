@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring (desestruturação)</title>
+
+    <script>
+        let produto = {
+            descricao: 'Notebook',
+            preco: 4999.99,
+            detalhes: {
+                fabricante: 'Sony',
+                modelo: 'VAIO',
+                ano: undefined
+            }
+        };
+
+        let { descricao, preco } = produto;
+        console.log(produto);
+        console.log(descricao, preco);
+
+        let { descricao: d, preco: p = 4000, desconto = 10 } = produto;
+        console.log(d, p, desconto);
+
+        let { detalhes: {fabricante, modelo, ano = 'Não informado'} } = produto;
+        console.log(fabricante, modelo, ano);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

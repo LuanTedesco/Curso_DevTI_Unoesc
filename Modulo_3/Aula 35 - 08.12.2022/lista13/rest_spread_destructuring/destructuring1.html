@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring (desestruturação)</title>
+
+    <script>
+        let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão'];
+
+        let fruta = frutas[0];
+        console.log(fruta);
+
+        // Utilizando destructuring (pulando 'pera')
+        let [f1, f2, , f3] = frutas;
+        console.log(f1, f2, f3);
+
+        // Utilizando destructuring e atribuindo um valor padrão
+        // caso contrário fr5 seria 'undefined'
+        let [fr1, fr2 = 'Abacate', fr3, fr4, fr5 = 'Banana'] = frutas;
+        console.log(fr1, fr2, fr3, fr4, fr5);
+
+        let objetos = [['cadeira', 'mesa', 'sofa'], ['garfo', 'colher', 'faca']];
+        let [moveis,] = objetos;
+        let [, talheres] = objetos;
+        console.log(moveis)
+        console.log(talheres);
+
+        let [, [,, talher]] = objetos;
+        console.log(talher);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

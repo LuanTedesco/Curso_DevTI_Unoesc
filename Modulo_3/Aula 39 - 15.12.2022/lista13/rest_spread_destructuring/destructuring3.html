@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring (desestruturação)</title>
+
+    <script>
+        let valores = [10, 20, 30, 40];
+
+        function teste1([a, b, , d, e = 100]) {
+            console.log(a, b, d, e);
+        }
+
+        teste1(valores);
+
+        //------------
+
+        let objeto = {
+            a: 10,
+            b: 20,
+            c: 30,
+            d: 40
+        }
+
+        // Extração de atributos do objeto
+        function teste2({a: obj1, d, e = 100}) {
+            console.log(obj1, d, e);
+        }
+
+        teste2(objeto);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

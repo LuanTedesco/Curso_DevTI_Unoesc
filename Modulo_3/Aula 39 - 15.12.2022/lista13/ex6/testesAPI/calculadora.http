@@ -1,0 +1,16 @@
+# Exemplo de requisição GET
+GET http://localhost:8082/
+###
+
+# Exemplo de requisição GET com parâmetros
+GET http://localhost:8082/axiosParams?n1=40&n2=2
+###
+
+# Exemplo de requisição POST
+POST http://localhost:8082/axiosFD
+Content-Type: application/json
+
+{
+    "n1": 40,
+    "n2": 2
+}

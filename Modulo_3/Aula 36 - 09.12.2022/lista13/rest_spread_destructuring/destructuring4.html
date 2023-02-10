@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring (desestruturação)</title>
+
+    <script>
+        let valores = [10, 20, 30, 40];
+        let [ a, ...restante ]= valores;
+        console.log(a);
+        console.log(restante);
+
+        //-------
+
+        let objeto = {
+            a: 10, b: 20, c: 30, d: 40
+        };
+        let { a: obj1, ...obj2 } = objeto;
+        console.log(obj1, obj2);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous">
+
+    <title>Axios</title>
+</head>
+
+<body>
+    <div class="container">
+        <form method="post" action="#" class="was-validated" id="formulario">
+            <h2 class="alert alert-info mt-2">Calculando com Axios</em></h2>
+
+            <div class="form-group mb-3">
+                <label for="n1">Número 1:</label>
+                <input type="number" name="n1" id="n1" value="40" class="form-control" placeholder="Entre um número" required>
+                <small class="form-text text-muted">Digite um número</small>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="n2">Número 2:</label>
+                <input type="number" name="n2" id="n2" value="2" class="form-control" placeholder="Entre um número" required>
+                <small class="form-text text-muted">Digite um número</small>
+            </div>
+
+            <div class="form-group mb-3 text-center">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Entrar
+                </button>
+            </div>
+        </form>
+
+        <div id="get"></div>
+        <div id="post"></div>
+        <div id="put"></div>
+        <div id="delete"></div>
+    </div>
+
+    <script>
+        const formulario = document.getElementById('formulario');
+
+        function exibirResultado(id, dados) {
+            const resultado = JSON.stringify(dados);
+            document.getElementById(id).innerHTML = id.toUpperCase() + ': ' + resultado;
+        }
+
+        // Intrercepta o evento de submissão do formulário        
+        formulario.addEventListener('submit', async e => {
+            // Evita o comportamento padrão de submissão de formulário
+            e.preventDefault();
+
+            // Cria um objeto do tipo FormData a partir dos dados do formulário
+            const dadosForm = new FormData(formulario);
+            console.log(dadosForm);
+
+            // Recupera os campos de formulário de nome n1 e n2
+            const n1 = dadosForm.get('n1');
+            const n2 = dadosForm.get('n2');
+            console.log(n1, n2);
+
+            // Padrão GET passando os dados através da URL
+            axios(`http://localhost:8082/axios?n1=${n1}&n2=${n2}`)
+                .then(res => exibirResultado('get', res.data.resultado) );
+
+            // GET com parâmetros
+            const res = await axios.get('http://localhost:8082/axiosParams', { 
+                                    params: { n1, n2 }
+                                });
+            exibirResultado('get', res.data.resultado);
+
+            // POST
+            axios.post('http://localhost:8082/axios', { n1, n2 })
+                 .then(res => exibirResultado('post', res.data.resultado) );
+
+            // POST - FormData
+            const ret = await axios.post('http://localhost:8082/axiosFD', 
+                        dadosForm,
+                        // { 
+                        //     headers: {
+                        //         'Content-Type': 'multipart/form-data'
+                        //     }
+                        // }
+                  )
+            exibirResultado('post', ret.data.resultado);
+
+            // PUT
+            axios.put('http://localhost:8082/axios', { 
+                    operacao: 'Alteração' 
+                })
+                .then(res => exibirResultado('put', res.data.resultado));
+
+            // DELETE
+            axios.delete('http://localhost:8082/axios', { 
+                    data: { operacao: 'Exclusão' }
+                })
+                .then(res => exibirResultado('delete', res.data.resultado));
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+</body>
+</html>

@@ -17,11 +17,11 @@ Estruturas de Dados.
 
 Estudo dos conceitos da programação orientada a objetos e o desenvolvimento de sistemas utilizando banco de dados. Esta disciplina é chave para o desenvolvimento de aplicações desktop, que depois servirão de base para o desenvolvimento de aplicações web.
 
-> **Linguagens utilizadas: Java**
+> **Linguagem utilizada: Java**
 
 
 ## MÓDULO III - DESENVOLVIMENTO WEB
 
 Os estudos que realizaremos neste componente curricular objetivam auxiliar você a desenvolver competências para ler, compreender, analisar, interpretar e produzir textos coesos e coerentes.
 
-> **Linguagens utilizadas: Java**
+> **Linguagem utilizada: Java**

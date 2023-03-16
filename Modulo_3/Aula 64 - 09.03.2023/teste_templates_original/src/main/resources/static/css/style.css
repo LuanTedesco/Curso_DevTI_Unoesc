@@ -1,0 +1,18 @@
+html {
+	font-family: sans-serif;
+}
+
+body {
+	margin: 50px;
+	background-color: #0D262D;
+	color: #fff;
+	height: 90%;
+}
+
+h2 {
+	color: #f00;
+}
+
+h3 {
+	color: yellow;
+}

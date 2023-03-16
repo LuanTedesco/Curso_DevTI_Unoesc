@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Recursos</title>
+</head>
+<body>
+	<h2>Frutas (foreach)</h2>
+	<ul>
+		<li th:each="fruta : ${frutas}" th:text="${fruta}"></li>		
+	</ul>
+	
+	<h2>Frutas (sequência)</h2>
+	<ul>
+		<th:block th:each="i : ${#numbers.sequence(0, frutas.size()-1)}">
+ 			<li th:text=${frutas[__${i}__]}></li>
+ 		</th:block>
+	</ul>
+	
+	<h2>Hobbies</h2>
+	<ul th:if="${aluno.hobbies.size() >= 3}">
+		<li th:each="hobby : ${aluno.hobbies}" th:text="${hobby}"></li>
+	</ul>
+
+	<p th:if="${aluno.hobbies.size() == 2}">
+		Seus hobbies são: <span th:text="${aluno.hobbies[0]} + ' e ' + ${aluno.hobbies[1]}"></span>
+	</p>
+
+	<p th:if="${aluno.hobbies.size() eq 1}">
+		Seu único hobby é <span th:text="${aluno.hobbies[0]}"></span>
+	</p>
+
+	<p><a th:href="@{/}" href="index.html">Clique aqui</a> para retornar à home page</p>
+</body>
+</html>

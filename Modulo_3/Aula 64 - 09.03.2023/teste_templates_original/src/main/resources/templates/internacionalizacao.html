@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      th:lang="${#locale.language}" 
+	  th:with="lang=${#locale.language}"
+	  th:xmllang="${#locale.language}">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" th:href="@{/css/style.css}" href="css/style.css"/>
+
+	<title>Recursos</title>
+</head>
+<body class="text-center">
+	<img alt="Logo da Unoesc" src="imagens/logo_unoesc.jpg" th:href="@{imagens/logo_unoesc.jpg}">
+	<h2>Unoesc</h2>
+	<h3>Universidade do Oeste de Santa Catarina</h3>
+
+	<p th:text="#{welcome.message}"></p>
+    
+    <p>
+	    <div class="dropdown">
+	        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+	            <i class="fa-solid fa-language fa-4x"></i>
+	        </button>
+	        
+	        <ul class="dropdown-menu">
+	            <li><a class="dropdown-item" th:href="@{''(lang=en)}">English</a></li>
+	            <li><a class="dropdown-item" th:href="@{''(lang=pt_BR)}">Português</a></li>
+	        </ul>
+	    </div>
+
+		<br/>
+			
+		<span th:text="#{language.change}"></span>:
+		<select id="locales">
+		    <option value=""></option>
+		    <option value="en" th:text="#{language.eng}"></option>
+		    <option value="pt_BR" th:text="#{language.pt_BR}"></option>
+		</select>
+    </p>
+	
+	<p>
+		[[#{message.date}]]: <span th:utext="${dataCurta}"></span><br>
+		[[#{message.date}]]: <span th:utext="${dataLonga}"></span><br>
+	</p>
+	
+	<p>
+	    [[#{message.quantity}]]: <span th:text="${#numbers.formatDecimal(quantidade, 1, 'DEFAULT', 2, 'DEFAULT')}"></span><br/>
+		[[#{message.price}]]: <span th:text="${preco}"></span><br/>
+		[[#{message.value}]]: <span th:text="${#numbers.formatCurrency(valor)}"></span>
+	</p>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    $("#locales").change(function () {
+		    	let opcao = $('#locales').val();
+		    	
+		    	console.log(`alterando configuração para ${opcao}...`);
+		    	
+		        if (opcao != ''){
+		            window.location.href = '?lang=' + opcao;
+		        }
+		    });
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+

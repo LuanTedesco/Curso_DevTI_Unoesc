@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Testes com Thymeleaf</title>
+</head>
+<body>
+	<p>
+		Descrição (escaped): [[${descricao}]]
+		<br/>
+		Descrição (escaped): <span th:text="${descricao}"></span>
+	</p>
+	
+    <p>
+    	Descrição (unescaped): [(${descricao})]
+    	<br/>
+		Descrição (unescaped): <span th:utext="${descricao}"></span>
+    </p>
+	
+	<p>
+		<span th:text="${nome}"></span><br/>
+		<span th:text="'Olá ' + ${nome}"></span><br/>
+		<span th:text="${'Olá ' + nome}"></span><br/>
+		<span th:text="${'Olá ' + dados.get('nome') + ' ' + dados.valor}"></span><br/> 
+		<span th:text="|Olá ${dados.get('nome')} ${dados.valor}|"></span>
+	</p>
+</body>
+</html>

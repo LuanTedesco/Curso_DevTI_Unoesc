@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Perfil</title>
+</head>
+<body>
+	<h2>Perfil do Usuário</h2>
+	[[${perfil}]]
+	
+	<table border="1" cellspacing="0" cellpadding="3">
+		<tr>
+			<td>Nome completo</td>
+			<td th:text="${perfil.getTitulo() + ' ' + perfil.getNome() + ' ' + perfil.getSobrenome()}"></td>
+			<td	th:text="${perfil.titulo + ' ' + perfil.nome + ' ' + perfil.sobrenome}"></td>
+			<td th:text="|Você é ${perfil.titulo} ${perfil.nome} ${#strings.toUpperCase(perfil.sobrenome)}, bem-vindo|"></td>
+		</tr>
+		
+		<tr>
+			<td class="title">Data de nascimento</td>
+			<td th:text="${perfil.nascimento}"></td>
+			<td th:text="${#dates.format(perfil.nascimento, 'dd MMM yyyy')}"></td>
+			<td th:text="${#temporals.formatISO(perfil.dataLocal)}"></td>
+			<td th:text="${#temporals.format(perfil.dataHoraLocal, 'dd-MM-yyyy HH:mm')}"></td>
+			<td th:text="${#temporals.format(perfil.log, 'dd-MM-yyyy HH:mm')}"></td>
+		</tr>
+		
+		<tr>
+			<td class="title">Salário</td>
+			<td th:utext="${perfil.salario}"></td>
+			<td th:utext="${#numbers.formatCurrency(perfil.salario)}"></td>
+		</tr>
+	</table>
+
+	<p>
+		<a th:href="@{/perfil?id=} + ${perfil.id} + '&nome=' + ${perfil.nome}">
+			Visualizar meu perfil (forma 1)
+		</a>
+
+		<br/>
+		
+		<a th:href="@{/perfil(id=${perfil.id}, nome=${perfil.nome})}">
+			Visualizar meu perfil (forma 2)
+		</a>
+	</p>
+</body>
+</html>

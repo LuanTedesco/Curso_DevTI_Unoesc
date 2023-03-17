@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,19 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
-    <div id = "app">
+    <div id="app">
         <h2>Lista de Produtos</h2>
-        <li v-for = "produto in produtos">
+        <li v-for="produto in produtos">
             {{ produto }}
         </li>
     </div>
 
     <script>
-        const { createApp } = Vue;
+        const {
+            createApp
+        } = Vue;
 
         const app = createApp({
             data() {
@@ -32,4 +36,5 @@
         }).mount('#app');
     </script>
 </body>
+
 </html>

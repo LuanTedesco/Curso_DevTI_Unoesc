@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +15,9 @@
         }
     </style>
 </head>
+
 <body>
-    <div id = "app">
+    <div id="app">
         <p>
             <a v-bind:href="site">Unoesc</a>
             <br>
@@ -33,9 +35,9 @@
 
         <p>
             Conta paga? <input type="checkbox" v-model="pago"><br>
-                - Conta
-                <span style="color:red" v-if="!pago">não</span> 
-                <span style="color:red" v-else>realmente</span> 
+            - Conta
+            <span style="color:red" v-if="!pago">não</span>
+            <span style="color:red" v-else>realmente</span>
             foi paga!
         </p>
     </div>
@@ -51,4 +53,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados e Métodos: Vue 3</title>
 </head>
+
 <body>
-    <div id = "app">
+    <div id="app">
         <p>
             {{ nome }} - {{ nascimento.toLocaleDateString() }} - R$ {{ salario.toLocaleString() }}
             <br>Hora atual: {{ horaAtual() }}
@@ -17,14 +19,16 @@
         <p>
             {{ somar() }} <br>
             {{ subtrair() }}<br>
-            {{ multiplicar() }} 
+            {{ multiplicar() }}
         </p>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <script>
-        const { createApp } = Vue;
+        const {
+            createApp
+        } = Vue;
 
         const app = createApp({
             data() {
@@ -45,11 +49,13 @@
                 subtrair() {
                     return this.salario - 2;
                 },
-                getSalario() { return this.salario; },
+                getSalario() {
+                    return this.salario;
+                },
                 multiplicar: () => {
                     console.log(this);
                     let resultado = 21 * this.salario; // problema com contexto léxico
-                    
+
                     return resultado;
                 }
             },
@@ -61,4 +67,5 @@
         }).mount('#app');
     </script>
 </body>
+
 </html>

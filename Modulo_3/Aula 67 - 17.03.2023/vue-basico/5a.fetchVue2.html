@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Fetch</title>
+
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <div id = "app">
+        <h2>Lista de Produtos</h2>
+        <ul>
+            <li v-for="produto in produtos">
+                {{ produto.id }} - 
+                {{ produto.descricao }} - 
+                {{ produto.quantidade }} - 
+                R$ {{ produto.valor.toLocaleString() }}
+
+                <span style="color:red" v-if="produto.quantidade === 0">
+                    - Fora de estoque
+                </span>
+            </li>
+        </ul>
+        <h4>Total de itens no estoque: {{ totalProdutos }}</h4>
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+                data: {
+                produtos: []
+            },
+            computed: {
+                totalProdutos() {
+                    return this.produtos.reduce((soma, produto) => {
+                        return soma + produto.quantidade
+                    }, 0);
+                }
+            },
+            created() {
+                fetch('http://localhost:8080/api/produtos')
+                    .then(response => response.json())
+                    .then(json => {
+                        this.produtos = json
+                    });
+            }
+        });
+    </script>
+</body>
+</html>

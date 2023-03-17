@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretivas bind e model</title>
+
+    <script src="https://unpkg.com/vue@2"></script>
+
+    <style>
+        .vermelho {
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id = "app">
+        <p>
+            <a v-bind:href="site">Unoesc</a>
+            <br>
+            <a :href="site">Unoesc</a>
+        </p>
+
+        <p :class="cor">
+            Diretiva v-bind
+        </p>
+
+        <p>
+            <input type="text" v-model="site"><br>
+            {{ site }}
+        </p>
+
+        <p>
+            Conta paga? <input type="checkbox" v-model="pago"><br>
+                - Conta
+                <span style="color:red" v-if="!pago">não</span> 
+                <span style="color:red" v-else>realmente</span> 
+            foi paga!
+        </p>
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                site: 'https://www.unoesc.edu.br',
+                cor: 'vermelho',
+                pago: true
+            }
+        });
+    </script>
+</body>
+</html>

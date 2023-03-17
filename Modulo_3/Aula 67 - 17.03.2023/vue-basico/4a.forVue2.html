@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva for</title>
+
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <div id = "app">
+        <h2>Lista de Produtos</h2>
+        <li v-for = "produto in produtos">
+            {{ produto }}
+        </li>
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                produtos: [
+                    'Notebooks',
+                    'Mouses',
+                    'Teclados'
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

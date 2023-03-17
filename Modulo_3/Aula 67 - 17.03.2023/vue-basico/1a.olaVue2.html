@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Básico do Vue 2</title>
+
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ mensagem }}</p>
+        <p v-bind:title="titulo" v-text="mensagem"></p>
+        <p :title="titulo" v-html="mensagemHTML"></p>
+    </div>
+
+    <script>
+        const opcoes = {
+            el: '#app',
+            data: {
+                mensagem: 'Olá Vue 2!',
+                mensagemHTML: 'Olá <u>Vue.js</u>!',
+                titulo: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque facere recusandae quaerat. Asperiores eveniet consectetur laudantium, doloremque, dolor quae enim deserunt maxime temporibus ab repudiandae nostrum sit ullam saepe necessitatibus?'
+            }
+        };
+
+        const vm = new Vue(opcoes);
+
+        window.onload = function() {
+            console.log(vm);
+        }
+    </script>
+</body>
+</html>

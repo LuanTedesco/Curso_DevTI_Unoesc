@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 2</title>
+
+  <script src="https://unpkg.com/vue@2"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{ 40 + 2 }}</p>
+    <p>{{ "Curso DEV-TI".toUpperCase() }}</p>
+    <p>{{ texto }}</p>
+    <h1 v-text="texto"></h1>
+    <h1 v-html="textoHTML"></h1>
+    Nascimento: {{ nascimento.toLocaleDateString() }}
+    <br>
+    R$ {{ salario.toLocaleString() }}
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        texto: 'Unoesc',
+        textoHTML: '<em>U</em>noesc',
+        nascimento: new Date('1975-06-06T00:00'),
+        salario: 1234.56
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+INSERT INTO tb_func (nome, num_dep, salario, nascimento) VALUES ('Fulano', 2, 1234.56, '1990-12-31');
+INSERT INTO tb_func (nome, num_dep, salario, nascimento) VALUES ('Beltrano', 0, 4999.99, '1975-06-06');

@@ -2,65 +2,65 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados e Métodos: Vue 2</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados e Métodos: Vue 2</title>
 </head>
 
 <body>
-    <div id="app">
-        <p>
-            {{ nome }} - {{ nascimento.toLocaleDateString() }} - R$ {{ salario.toLocaleString() }}
-            <br>Hora atual: {{ horaAtual() }}
-            <br>Salário atualizado: R$ {{ salarioAtualizado }}
-        </p>
+  <div id="app">
+    <p>
+      {{ nome }} - {{ nascimento.toLocaleDateString() }} - R$ {{ salario.toLocaleString() }}
+      <br>Hora atual: {{ horaAtual() }}
+      <br>Salário atualizado: R$ {{ salarioAtualizado }}
+    </p>
 
-        <p>
-            {{ somar() }} <br>
-            {{ subtrair() }}<br>
-            {{ multiplicar() }}
-        </p>
-    </div>
+    <p>
+      {{ somar() }} <br>
+      {{ subtrair() }}<br>
+      {{ multiplicar() }}
+    </p>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script>
-        const app = new Vue({
-            el: '#app',
-            data: {
-                nome: 'Herculano',
-                nascimento: new Date('1975-06-06T00:00'),
-                salario: 123.45
-            },
-            methods: {
-                horaAtual() {
-                    return new Date().toLocaleString()
-                },
-                somar: function somar() {
-                    console.log(this);
-                    return 40 + 2;
-                },
-                subtrair() {
-                    return this.salario - 2;
-                },
-                getSalario() {
-                    return this.salario;
-                },
-                multiplicar: () => {
-                    console.log(this);
-                    let resultado = 21 * this.salario; // problema com contexto léxico
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        nome: 'Herculano',
+        nascimento: new Date('1975-06-06T00:00'),
+        salario: 123.45
+      },
+      methods: {
+        horaAtual() {
+          return new Date().toLocaleString()
+        },
+        somar: function somar() {
+          console.log(this);
+          return 40 + 2;
+        },
+        subtrair() {
+          return this.salario - 2;
+        },
+        getSalario() {
+          return this.salario;
+        },
+        multiplicar: () => {
+          console.log(this);
+          let resultado = 21 * this.salario; // problema com contexto léxico
 
-                    return resultado;
-                }
-            },
-            computed: {
-                salarioAtualizado() {
-                    return (this.salario * 1.10).toFixed(2)
-                }
-            }
-        });
-    </script>
+          return resultado;
+        }
+      },
+      computed: {
+        salarioAtualizado() {
+          return (this.salario * 1.10).toFixed(2)
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

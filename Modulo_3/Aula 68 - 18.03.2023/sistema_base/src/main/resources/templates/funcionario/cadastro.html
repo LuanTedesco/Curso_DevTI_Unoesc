@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR" layout:decorate="~{layout}">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <section class="layout-content" layout:fragment="corpo">
+      <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <i class="oi oi-caret-right"></i>
+              Cadastrar Livro
+            </li>
+          </ul>
+          <a class="btn btn-primary btn-md" href="/funcionarios/listar">
+            <span class="oi oi-spreadsheet"></span>
+            Listar funcionarios
+          </a>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <h1 class="h5 fw-bold mt-2">Formulário de Cadastro de funcionarios</h1>
+
+        <hr />
+
+        <form
+          th:object="${funcionarioDTO}"
+          method="POST"
+          th:action="${funcionarioDTO.id == null} ? @{/funcionarios/salvar} : @{/funcionarios/editar}"
+        >
+          <div th:replace="~{fragments/validacao :: validacao}"></div>
+
+          <div class="row g-2 p-2 mb-3">
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control pb-2"
+                id="titulo"
+                th:field="*{titulo}"
+                required
+                autofocus
+                placeholder="Entre com o nome do Funcionario"
+              />
+              <label for="titulo" class="pt-2 ps-4">Nome</label>
+            </div>
+
+            <div class="form-floating">
+              <input
+                type="number"
+                class="form-control pb-2"
+                id="paginas"
+                th:field="*{paginas}"
+                required
+                placeholder="Entre com o N° de Dependentes"
+              />
+              <label for="paginas" class="pt-2 ps-4">N° de Dependentes</label>
+            </div>
+
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control pb-2"
+                id="autor"
+                th:field="*{autor}"
+                required
+                placeholder="Entre com o nome do autor do livro"
+              />
+              <label for="autor" class="pt-2 ps-4">Autor</label>
+            </div>
+          </div>
+
+          <input type="hidden" id="id" th:field="*{id}" />
+          <input
+            type="submit"
+            class="btn btn-primary"
+            th:value="${funcionarioDTO.id == null} ? 'Incluir' : 'Salvar'"
+          />
+          <input
+            type="button"
+            class="btn btn-danger"
+            value="Cancelar"
+            th:onclick="window.location=[[@{/funcionarios/listar}]]"
+          />
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

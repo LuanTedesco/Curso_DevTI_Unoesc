@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(180deg, #ec12f3, #6b00e6);
+}
+
+.container {
+  background-color: #f2f2f2;
+  width: 700px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.new-item {
+  display: flex;
+  margin: 5px;
+  justify-content: space-between;
+}
+
+.new-item input {
+  width: 1000px;
+  padding: 2px;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 5px;
+  height: 300px;
+  overflow: auto;
+}
+
+.todo-list::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-item + .todo-item {
+  margin-top: 5px;
+  border-top: 1px solid #d9d9d9;
+  padding-top: 5px;
+}
+
+.todo-item button {
+  background-image: linear-gradient(
+    92.88deg,
+    #455eb5 9.16%,
+    #5643cc 43.89%,
+    #673fd7 64.72%
+  );
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: 'Inter UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.todo-item button:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 7px;
+  transition-duration: 0.1s;
+}
+
+@media (min-width: 768px) {
+  .todo-item button {
+    padding: 0 2.6rem;
+  }
+}
+
+.new-item button {
+  background-image: linear-gradient(
+    92.88deg,
+    #dd22e4 9.16%,
+    #dd22e4 43.89%,
+    #dd22e4 64.72%
+  );
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: 'Inter UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  width: 8.5rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.new-item button:hover {
+  box-shadow: rgba(205, 63, 186, 0.5) 0 1px 7px;
+  transition-duration: 0.1s;
+}
+
+.new-item input {
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.new-item input:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}

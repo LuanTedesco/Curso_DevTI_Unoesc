@@ -1,0 +1,32 @@
+<div class="conteiner-principal">
+    <button class="btn-voltar" (click)="voltar()">
+        < </button>
+            <div class="container-cadastro">
+                <label class="titulo"> Novo funcionário</label>
+                <form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" formControlName="nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numDep">N° departamento</label>
+                        <input type="number" formControlName="numDep">
+                    </div>
+                    <div class="form-group">
+                        <label for="salario">Salário</label>
+                        <input type="number" formControlName="salario">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nascimento">Data de nascimento</label>
+                        <input type="date" formControlName="nascimento">
+                    </div>
+
+
+                    <input type="submit" class="btn" value="Cadastrar">
+
+                </form>
+            </div>
+</div>

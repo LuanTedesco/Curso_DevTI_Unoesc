@@ -1,0 +1,19 @@
+<table>
+    <tr class="linha-principal">
+        <td class="id">Id</td>
+        <td>Nome</td>
+        <td>Nº Departamento</td>
+        <td>Salário</td>
+        <td>Data de nascimento</td>
+    </tr>
+    <tr *ngFor="let funcinario of listaFuncinarios" class="linha">
+        <td class="id">{{ funcinario.id }}</td>
+        <td>{{ funcinario.nome }}</td>
+        <td>{{ funcinario.numDep}}</td>
+        <td>{{ funcinario.salario | currency:'BRL':true:'1.2-2'}}</td>
+        <td>{{funcinario.nascimento | date: 'dd/MM/yyyy'}}</td>
+    </tr>
+</table>
+<button (click)="navegarCadastro()">
+    + Novo funcionário
+</button>

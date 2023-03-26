@@ -1,0 +1,40 @@
+table {
+    margin: 20px 0px;
+    width: 100%;
+    border-collapse: collapse !important;
+
+    td {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        padding: 0px 0px;
+        border-color: #e7e7e7;
+    }
+
+    .linha-principal {
+        padding-top: 11px;
+        padding-bottom: 11px;
+        background-color: #04AA6D;
+        color: white;
+        height: 30px;
+        font-family: system-ui;
+    }
+
+    .id {
+        text-align: center;
+    }
+}
+
+button {
+    background-color: #04AA6D;
+    color: #ffffff;
+    border-color: #04AA6D;
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    float: right;
+    margin: 15px;
+    height: 35px;
+}
